@@ -1,0 +1,88 @@
+body{
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+ 
+}
+.screan{
+background-color: aliceblue;
+height: 50px;
+width: 100%;
+
+margin-bottom: 40px;
+display: flex;
+justify-content: center;
+box-shadow:rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; ;
+
+}
+
+.seat{
+    background-color: blanchedalmond;
+    height: 15px;
+    width: 15px;
+    margin: 6px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    
+
+}
+
+
+.seat.selected{
+ background-color: aqua;
+
+}
+
+
+.seat.reserved{
+    background-color: brown;
+}
+/* burda ki :nth-of-type(2) 2. satırdan sonra 35 px'lik margin bırakmamızı sağlar ( nedeni seat claslarını row un içinde verdiğimiz için o saatırı 2. koltukdan sonra ayırır. */
+.seat:nth-of-type(2){
+
+    margin-right: 35px;
+}
+
+.seat:nth-last-of-type(3){
+    margin-right: 30px;
+}
+/* Burda not(.seat.reserved) diyerek hover özelliği eklicez ama classı reserved olanları bundan uzak tutucaz anlamına geliyor. */
+.seat:not(.seat.reserved):hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.movie-list{
+    
+    margin: 30px;
+    
+}
+.info{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    color: #777;
+    display: flex;
+}
+.info li{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    color: white;
+}
+
+
+.row{
+    display: flex;
+}
+
+p.text span{
+
+    color: gold;
+}
+
