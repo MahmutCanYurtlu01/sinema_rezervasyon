@@ -4,6 +4,7 @@ const count=document.getElementById("count");
 const amount=document.getElementById("amount");
 const select=document.getElementById("movie");
 const seats=document.querySelectorAll(".seat:not(.reserved)");
+const secilikoltuklar=document.querySelectorAll(".row div");
 
 getFromLocalStroge();
 değişim();
@@ -22,7 +23,16 @@ container.addEventListener("click",function (e) {
 
 select.addEventListener("change",function(e){
     
+    
+
+    secilikoltuklar.forEach(function(koltuk)
+    {
+        koltuk.className='seat';
+
+    })
     değişim();
+
+
 });
 
 function değişim() {
@@ -56,7 +66,7 @@ function değişim() {
     amount.innerText=selectedSeatCount*select.value;; 
 
     saveTolocalStorage(selectedSeatIndexs);
-    console.log(select)
+    // console.log(select)
     
 }
 
@@ -90,3 +100,6 @@ function değişim() {
         localStorage.setItem("selectedSeats", JSON.stringify(indexs));
         localStorage.setItem("selectedMovieIIndex",select.selectedIndex);
     }
+
+
+    console.log(secilikoltuklar);
